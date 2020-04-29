@@ -1,0 +1,112 @@
+FengYi_Li_wk_9_hw_part 2
+
+1. What is the Web Storage API?
+The Web Storage API permits applications to store data within an individual user's browser.
+
+
+2. What data storage was used before HTML5 was introduced? What was the data storage called and what was it included in?
+Before HTML5, application data had to be stored in cookies, included in each server request. However, Web Storage is more secure, and large amounts of data can be stored locally, without affecting website performance.
+
+
+3. What are 3 advantages of using the Web Storage API over cookies?
+The 3 advantages of using the Web Storage API over cookies are more secure, the storage limit is much larger (at least 5MB), and information is never transferred to the server.
+
+
+4. What are the two objects called for storing data on the client that HTML5 Web Storage provides?
+The two objects called for storing data on the client that HTML5 Web Storage provides are sessionStorage and localStorage.
+
+5. Can localStorage and sessionStorage be read server-side?
+Yes, localStorage and sessionStorage can be read client-side only.
+
+
+6. Which data item can be read server-side? Why is it popular? What is it used mostly for? And what kind of data might it contain?
+Cookies are popular because they allow sites to store user data directly into the user's Web browser. They are mostly used to identify a user's session, allowing a web server to recognize the user as they navigate through the site, and may contain sensitive data.
+
+
+7. Why do cookies have to be well secured and protected?
+cookies have to be well secured and protected because it may contain sensitive data. That means they have to be well secured and protected.
+
+
+8. What is the httpOnly flag good for? And what does it help mitigate the negative impact of, for example?
+The httpOnly flag blocks access of a cookie from the client-side and therefore JavaScript code.
+If an XSS (Cross Site Scripting) attack does succeed in injecting some JavaScript despite your security measures, it would not be able to access the cookies. That would mitigate the negative impact of the XSS attack.
+
+
+9. What are localStorage and sessionStorage of the Web Storage API connected to? And what does that connection make possible for pages from the same origin to do?
+Web Storage API is connected to a particular origin domain and protocol. All pages from one origin, can store and access the same data.
+
+
+10. What does the Storage Interface of the Web Storage API permit?
+Storage interface of the Web Storage API permits you to set, retrieve, and remove data for a specific domain and storage type local or session.
+
+
+11. The Storage Object, represented by the localStorage and sessionStorage objects, contains one property. What is that property called and what does it return? Use your project application to describe what this property does.
+Storage.length: the length property returns an integer representing the number of data items stored in the Storage object. In addition, the Storage object can be represented by either the localStorage object or the sessionStorage object.
+
+Code Example:
+function populateStorage() {
+    localStorage.setItem('bgcolor', 'yellow');
+    localStorage.setItem('font', 'Helvetica');
+    localStorage.setItem('image', 'cats.png');
+
+    localStorage.length; // Should return 3
+}
+
+
+
+12. Give me the five Storage methods of the Web Storage API and describe what each does. When applicable, use code from your project application as examples.
+
+1) Storage.key(): when passed a certain number represented by n, this method returns the name of the nth key in the storage.
+2) Storage.getItem(): when passed a key name, will return that key's value, or null if the key does not exist.
+
+3) Storage.setItem(): when passed a key name and value, will add that key to the storage, or update that key's value if it already exists.
+sessionStorage.setItem("autosave", textField.value);
+
+4) Storage.removeItem(): when passed a key name, will remove that key from the storage. If there is no item associated with the given key, this method will do nothing.
+sessionStorage.removeItem("autosave", textField.value);
+
+5) Storage.clear(): when invoked, will empty all keys out of the storage.
+sessionStorage.clear();
+
+
+
+13. When using cookies, why would you want to use the Secure flag?
+When using cookies, I would want to use the Secure flag because this prevents client-side access to that cookie.
+
+
+
+14. What is the difference between localStorage and sessionStorage?
+sessionStorage is similar to localStorage, the difference is while data in localStorage doesn't expire, data in sessionStorage is cleared when the page session ends. A page session lasts as long as the browser is open, and survives over page reloads and restores.
+
+
+
+15. What are the similarities between localStorage and sessionStorage?
+The similarities between localStorage and sessionStorage are localStorage and sessionStorage accomplish the exact same thing and have the same API.
+
+
+
+16. Explain what try...catch is and what it does.
+The try statement allows you to define a block of code to be tested for errors while it is being executed. The catch statement allows you to define a block of code to be executed, if an error occurs in the try block.
+
+
+
+17. Why do we have to set a try...catch statement in our application? Refer to your/this homework README.md for the answer.
+If there IS sessionStorage support, then the program steps into the else statement. There we set and get our sessionStorage as well as check if we have exceeded our sessionStorage quota. Since we have to catch our exception, we need to use a try...catch statement.
+
+
+
+18. Explain what JSON.stringify() does and provide an example using code from your project application.
+The JSON. stringify method converts a JavaScript value into a JSON string. It is typically used to convert JavaScript arrays or objects to JSON, although it can also be used with simple data types like strings and numbers. In addition, we need to take the sessionStorage object's autosave property's value and extract it from sessionStorage and transform the value into a string so that we may insert it into a .txt file. Otherwise, the value of the sessionStorage key would not be readable.
+
+const csv = JSON.stringify(sessionStorage['autosave']);
+
+
+
+19. Describe what the value of the csv variable is and why it is important for our application.
+The value of the csv variable is JSON.stringify and it is important for our application we need to take the sessionStorage object's autosave property's value and extract it from sessionStorage and transform the value into a string so that we may insert it into a .txt file. Otherwise, the value of the sessionStorage key would not be readable.
+
+
+
+20. Please copy and paste the result of the console.log(csv) after you have clicked on the Save Text To File For Download button. Hint: you should try this out only after you have completed building your application.
+session.js:10 Hello! I love JavaScript, and I prefer sessionStorage. How about you? 👍
+cons

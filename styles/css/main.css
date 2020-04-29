@@ -1,0 +1,91 @@
+/*  scss variables */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+body {
+  font-family: 'Alatsi';
+  background: linear-gradient(to right, aliceblue, powderblue);
+}
+
+a {
+  text-decoration: none; 
+  color:powderblue}
+
+.note-taker {
+  width: 60%;
+  margin: 25px auto;
+  max-width: 900px; }
+
+.note-taker #textArea {
+    width: 100%; }
+
+.title {
+  color: dodgerblue;
+  text-align: center; }
+
+.clear,.empty,#save {
+  color: darkgreen;
+  line-height: 35px; }
+
+.storage-buttons,#save,.title {
+     display: flex;
+     justify-content: center; }
+
+.storage-buttons a:first-of-type, #save a:first-of-type, .title a:first-of-type {
+    margin-right: 1.5rem; }
+
+.clear:focus, .clear:hover, .clear:active,
+.empty:focus, .empty:hover, .empty:active,
+#save:focus, #save:hover, #save:active {
+    color: red;
+    text-decoration: none; }
+
+.textarea-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+textarea {
+  border: 3px solid black;
+  resize: none;
+  background-color: lightgoldenrodyellow;
+  padding: 9px;
+  color:black;
+  letter-spacing: 1px;
+  font-size: 15px;
+  border-radius: 9px; }
+
+#save-text {
+  background-color: orange;
+  color: black;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  letter-spacing: 0.9px;
+  width: 100px;
+  height: 40px;
+  font-size: 16px;
+  margin-top: 15px;
+  border-radius: 8px; 
+}
+
+#save-text:hover {
+    background-color: lightskyblue;
+    color: black;
+}
+
+.site-footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 20px;
+    position: fixed;
+}
+
+
+
+
+
